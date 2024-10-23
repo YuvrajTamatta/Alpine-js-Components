@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine js Component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>   
+    <script src="app.js"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div x-data="{open:false}">
+        <button @click="open = !open" class="inline-flex items-center py-2 px-6 bg-purple-700 hover:bg-opacity-80 text-white rounded-md shadow">Toggle<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 ml-4 transition-all" :class="{'rotate-90' : open}" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+          
+           </button>
+        <ul x-show="open" @click.outside="open=false" x-transition class="bg-white w-[160px] shadow-md py-1 rounded py-3">
+            <li>
+                <a class="px-2 hover:bg-gray-400 block" href="">Home</a>
+            </li>
+            <li>
+                <a class="px-2 hover:bg-gray-400 block" href="">Edit</a>
+            </li>
+            <li>
+                <a class="px-2 hover:bg-gray-400 block" href="">Close</a>
+            </li>
+            <li>
+                <a class="px-2 hover:bg-gray-400 block" href="">Delete</a>
+            </li>
+        </ul>
+
+    </div>
+
+
+    
+</body>
+</html>
